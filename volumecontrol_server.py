@@ -15,10 +15,10 @@ from mcp.server.fastmcp import FastMCP
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("volume-control-server", host="0.0.0.0", port=8000)
+logger = logging.getLogger("volume-control-server")
 
 # Create the MCP server
-mcp = FastMCP("Volume Control")
+mcp = FastMCP("Volume Control", host="0.0.0.0", port=8000)
 
 class VolumeController:
     """Handles all volume control operations using pycaw library"""
