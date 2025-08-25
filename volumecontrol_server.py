@@ -15,7 +15,7 @@ from mcp.server.fastmcp import FastMCP
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("volume-control-server")
+logger = logging.getLogger("volume-control-server", host="0.0.0.0", port=8000)
 
 # Create the MCP server
 mcp = FastMCP("Volume Control")
@@ -284,4 +284,4 @@ def toggle_mute() -> str:
         return f"❌ Error: {result['error']}"
 
 if __name__ == "__main__":
-    mcp.run()
+    mcp.run("streamable-http")
