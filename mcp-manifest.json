@@ -1,0 +1,73 @@
+{
+  "name": "volumecontrolmcp",
+  "version": "0.1.0",
+  "description": "Windows Volume Control MCP Server",
+  "author": "Your Name",
+  "homepage": "https://github.com/akansha-code/volumecontrolmcp",
+  "license": "MIT",
+  "mcp": {
+    "server": {
+      "command": "volumecontrolmcp",
+      "description": "Control Windows system volume through MCP",
+      "tools": [
+        {
+          "name": "get_volume",
+          "description": "Get current volume level and mute status"
+        },
+        {
+          "name": "set_volume", 
+          "description": "Set volume to specific percentage (0-100)"
+        },
+        {
+          "name": "mute",
+          "description": "Mute system audio"
+        },
+        {
+          "name": "unmute",
+          "description": "Unmute system audio"
+        },
+        {
+          "name": "toggle_mute",
+          "description": "Toggle between muted/unmuted states"
+        },
+        {
+          "name": "apply_preset",
+          "description": "Apply predefined volume configuration"
+        }
+      ],
+      "resources": [
+        {
+          "uri": "volume://current-state",
+          "description": "Real-time volume and mute status"
+        },
+        {
+          "uri": "volume://presets", 
+          "description": "Available volume presets"
+        },
+        {
+          "uri": "volume://capabilities",
+          "description": "System audio capabilities"
+        }
+      ],
+      "prompts": [
+        {
+          "name": "volume-control-help",
+          "description": "Usage guidance and examples"
+        },
+        {
+          "name": "volume-settings",
+          "description": "Configuration templates"
+        },
+        {
+          "name": "volume-troubleshooting",
+          "description": "Problem-solving guide"
+        }
+      ]
+    }
+  },
+  "requirements": {
+    "python": ">=3.10",
+    "os": ["Windows"]
+  },
+  "keywords": ["mcp", "volume", "audio", "windows", "control"]
+}

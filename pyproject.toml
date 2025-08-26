@@ -1,10 +1,56 @@
 [project]
 name = "volumecontrolmcp"
 version = "0.1.0"
-description = "Add your description here"
+description = "Windows Volume Control MCP Server - Control system volume through Model Context Protocol"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["mcp", "volume", "audio", "windows", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11", 
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
 dependencies = [
     "mcp[cli]>=1.13.1",
     "pycaw>=20230407",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+volumecontrolmcp = "volumecontrolmcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/akansha-code/volumecontrolmcp"
+Repository = "https://github.com/akansha-code/volumecontrolmcp.git"
+Issues = "https://github.com/akansha-code/volumecontrolmcp/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
